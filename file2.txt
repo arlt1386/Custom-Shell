@@ -1,0 +1,11 @@
+## Mix of foreground, background, and built-in commands
+date
+sleep 2 &
+jobs
+sleep 1
+ls 
+jobs
+sleep 3 &
+pwd
+jobs
+

@@ -1,0 +1,29 @@
+# Testing advanced command sequencing
+ls -la | tail -3
+pwd
+
+sleep 3 & date & jobs
+
+echo "Testing multiple background jobs"
+sleep 5 &
+sleep 2 &
+jobs
+
+sleep 1
+jobs
+
+history
+
+echo "Bringing most recent job to foreground"
+fg
+
+jobs
+
+echo "Testing specific job number"
+sleep 3 &
+jobs
+echo "Bringing job 2 to foreground"
+fg 2
+
+jobs
+echo "Sequencing test complete"

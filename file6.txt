@@ -1,0 +1,45 @@
+# Testing built-in vs external command handling
+echo "TESTING BUILT-IN COMMANDS"
+
+# Test external commands first
+ls -la | head -3
+pwd
+date
+
+# Test jobs built-in with background external commands
+sleep 3 &
+sleep 2 &
+jobs
+
+# Test history built-in
+history
+
+# Mix built-in and external
+echo "Current user:" && whoami
+jobs
+
+# Test wait built-in
+echo "Waiting for background jobs..."
+wait
+jobs
+
+# More external commands
+echo "Testing file operations"
+touch test_file.txt
+ls -la test_file.txt
+rm test_file.txt
+
+# Test fg built-in with new background job
+sleep 4 &
+jobs
+echo "Bringing job to foreground"
+fg
+
+# Test exit built-in 
+# echo "Testing exit command"
+# exit
+
+# Final external commands
+echo "TEST COMPLETE"
+date
+pwd

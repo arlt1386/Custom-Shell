@@ -1,0 +1,20 @@
+# Testing command sequencing and built-ins
+ls | head 
+pwd
+
+sleep 2 & whoami & jobs
+
+echo "Testing fg command"
+sleep 4 &
+jobs
+
+sleep 1
+jobs
+
+history
+
+echo "Bringing job to foreground"
+fg
+
+jobs
+echo "All done"

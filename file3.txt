@@ -1,0 +1,19 @@
+## Testing job control and waiting
+echo "Starting background jobs"
+sleep 5 &
+sleep 3 &
+jobs
+
+echo "Checking job status"
+jobs
+
+sleep 2
+echo "Foreground sleep done"
+
+jobs
+
+wait
+echo "All background jobs should be done now"
+
+jobs
+date
